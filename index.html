@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function generateButtons() {
+                for (let i = 0; i < 26; i++) {
+                    let btn = document.createElement('BUTTON')
+                    btn.innerHTML = String.fromCharCode(65+i);
+                    document.body.appendChild(btn);
+                    btn.onclick = function() {
+                        console.log(btn.innerHTML + ' was clicked');
+                    }
+                }
+            }
+            generateButtons();
+        </script>
+        <br>
+        <script>
+            function recipe(title, servings, ingredients) {
+                this.title = title;
+                this.servings = servings;
+                this.ingredients = ingredients; 
+                this.print = function () {
+                    document.write('Title: ', this.title, '<br>');
+                    document.write('Serves: ', this.servings, '<br>');
+                    document.write('Ingredients: ', '<br>')
+                    for (i = 0; i < this.ingredients.length; i++) {
+                        document.write(this.ingredients[i], '<br>')
+                    }
+                }
+            }
+            let dinner = new recipe('GhirmehSabzi', 2, ['cinnamon', 'lettuce', 'onion']);
+            dinner.print();
+        </script>
+    </body>
+</html>
